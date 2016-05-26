@@ -1,0 +1,16 @@
+public float lastClickTime;
+public bool isDoubleClick;
+void Update () {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            if (Time.time - lastClickTime < 0.25f)//0.25 è la velocità che deve avere il doppio click
+            {   //doppio click
+                isDoubleClick = true;
+            }
+            else
+            {   //singolo click
+                isDoubleClick = false;
+            }
+            lastClickTime = Time.time;
+        }
+    }

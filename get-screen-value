@@ -1,0 +1,8 @@
+private void Res(out float minX, out float maxX, out float minY, out float maxY)
+    {
+        Vector3 max = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
+        maxX = max.x ;
+        maxY = max.y ;
+        minX = maxX - 2 * (maxX - Camera.main.transform.position.x);
+        minY = maxY - 2 * (maxY - Camera.main.transform.position.y);
+    }

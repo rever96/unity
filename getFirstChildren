@@ -1,0 +1,13 @@
+private T[] getFirstChildren<T>(GameObject go) where T : Component
+    {
+        T[] children = go.GetComponentsInChildren<T>();
+        List<T> firstChildren = new List<T>();
+        foreach (T item in children)
+        {   //se esiste il padre e il padre è lo stesso allora aggiungi item
+            if (item.gameObject.transform.parent != null && item.gameObject.transform.parent.gameObject == go)
+            {
+                firstChildren.Add(item);
+            }
+        }
+        return firstChildren.ToArray();
+    }

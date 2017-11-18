@@ -1,0 +1,1 @@
+gameObject.GetComponent<Renderer>().material.color = Color.green;
